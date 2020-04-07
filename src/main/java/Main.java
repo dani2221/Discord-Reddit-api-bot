@@ -33,10 +33,9 @@ import java.util.logging.Logger;
 import static jdk.internal.net.http.HttpRequestImpl.USER_AGENT;
 
 public class Main extends ListenerAdapter {
-    List<String> authors = new ArrayList<>();
     public static void main(String[] args) throws LoginException {
         JDABuilder builder = new JDABuilder(AccountType.BOT);
-        String token = "Njg4NzQzNTc2NzQ5ODY3MDIw.Xm4wvw.6g1Rl7QXj6Qqfl5j0QUBOBz4EIA";
+        String token = ""; //place your own token code from discord here
 
         builder.setToken(token);
         builder.setStatus(OnlineStatus.ONLINE);
@@ -48,11 +47,6 @@ public class Main extends ListenerAdapter {
     @Override
     public void onMessageReceived(@Nonnull MessageReceivedEvent event) {
         String msg = event.getMessage().getContentRaw();
-        authors.add("beastbreaker");
-        authors.add("smh");
-        authors.add("zatharel");
-        authors.add("lolrwkt");
-        authors.add("daska");
         String[] Message = msg.split("\\s+");
         if(Message[0].toLowerCase().equals(".reddit")) {
             String subReddit = Message[1];
